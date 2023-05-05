@@ -7,7 +7,7 @@ services:
   github:
     repo: TheOtherDavid/flask-sample-deploy
     branch: master
-  build_command: pip install -r requirements.txt
+  build_command: pip install -r requirements.txt gunicorn
   health_check:
     http_path: /health
   run_command: gunicorn myproject:app -w 1 -k gevent -b :8080
