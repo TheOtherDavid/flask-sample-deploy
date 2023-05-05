@@ -10,5 +10,5 @@ services:
   build_command: pip install -r requirements.txt
   health_check:
     http_path: /health
-  run_command: uwsgi --http-timeout 86400 --http :8080 --master --processes 1 --wsgi-file myproject.py --callable app
+  run_command: gunicorn myproject:app -w 1 -k gevent -b :8080
   http_port: 8080
