@@ -10,5 +10,5 @@ services:
   build_command: pip install -r requirements.txt
   health_check:
     http_path: /health
-  run_command: uwsgi --http-timeout 86400 --http :8080 --master --processes 1 --wsgi myproject:create_app()
+  run_command: uwsgi --http-timeout 86400 --http :8080 --master --processes 1 --wsgi myproject:application
   http_port: 8080

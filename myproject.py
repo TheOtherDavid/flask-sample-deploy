@@ -13,7 +13,7 @@ def health_check():
     print("Handling the health_check route")
     return 'OK', 200
 
-def create_app():
+def application():
     print("Creating the Flask app")
     return app
 
